@@ -24,8 +24,9 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": ["ms-python.python", "esbenp.prettier-vscode"]
     }
-  }
+  },
 
   // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "devcontainer"
+  "runArgs": ["--env-file", ".devcontainer/devcontainer.env"]
 }
