@@ -24,7 +24,7 @@ def generate_text(message):
                 "content": message
             },
         ],
-        max_tokens=100,
+        max_tokens=1000,
         n=1,
         temperature=0.8,
     )
@@ -33,7 +33,7 @@ def generate_text(message):
     return response
 
 if __name__ == "__main__":
-    message = "What is the highiest mountain in Japan?"
+    message = "show me the terraform script which deploys Azure OpenAI Service."
 
     response = generate_text(message)
     print(response)
