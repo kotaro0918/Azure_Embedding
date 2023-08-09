@@ -33,7 +33,7 @@ def generate_text(message):
     return response
 
 if __name__ == "__main__":
-    message = "show me the terraform script which deploys Azure OpenAI Service."
+    message = "What is the 2nd highest mountain in Japan?"
 
     response = generate_text(message)
     print(response)
