@@ -33,3 +33,6 @@ python llama2-test.py
 ```
 
 ### その他
+
+PC やブラウザなどから llama-cpp-sever の URL は `http://localhost:8000/` だが、
+devcontainer 内からだと `http://host.docker.internal:8000/`　になる

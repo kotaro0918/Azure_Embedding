@@ -14,10 +14,10 @@ model = AzureChatOpenAI(
     openai_api_type = "azure",
 )
 
-results = model(
+result = model(
     [
         HumanMessage(content="What comes after 1,2,3 ?"),
     ]
 )
 
-print(results[1])
+print(result)
