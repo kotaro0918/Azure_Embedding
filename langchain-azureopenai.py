@@ -4,10 +4,11 @@ from langchain.schema import HumanMessage
 
 # 環境変数 OPENAI_API_KEY 読み込み
 api_key = os.getenv("OPENAI_API_KEY")
+api_base = os.getenv("AZURE_ENDPOINT")
 
 
 model = AzureChatOpenAI(
-    openai_api_base = "https://azure-openai-921831.openai.azure.com/",
+    openai_api_base = api_base,
     openai_api_version = "2023-06-01-preview",
     deployment_name = "gpt-4",
     openai_api_key = api_key,
