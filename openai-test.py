@@ -3,11 +3,11 @@ import os
 
 # 環境変数 OPENAI_API_KEY 読み込み
 api_key = os.getenv("OPENAI_API_KEY")
-
+api_base = os.getenv("AZURE_ENDPOINT")
 # OPENAI 接続情報を設定
 openai.api_type = "azure"
 openai.api_key = api_key
-openai.api_base = "https://azure-openai-935953.openai.azure.com/"
+openai.api_base = api_base
 openai.api_version = "2023-06-01-preview"
 
 def generate_text(message):
