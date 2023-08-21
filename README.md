@@ -36,3 +36,27 @@ python llama2-test.py
 
 PC やブラウザなどから llama-cpp-sever の URL は `http://localhost:8000/` だが、
 devcontainer 内からだと `http://host.docker.internal:8000/`　になる
+
+## Azure Openaiを用いたEmbedding
+
+今回用いたデータセット
+```
+curl "https://raw.githubusercontent.com/Azure-Samples/Azure-OpenAI-Docs-Samples/main/Samples/Tutorials/Embeddings/data/bill_sum_data.csv" --output bill_sum_data.csv
+```
+
+入力トークン数上限が8192なので、上のデータからトークン数が8192以下のものだけを抽出しembedding  
+
+Embeddingに使用できるモデルには限りがあるので注意
+(gpt3.5turboやgpt4は使用不可)
+
+### 　動作原理  
+
+1.  bill_sum_data.csvのデータを加工したdf_billのtextをEmbedding
+
+1.  user_queryをベクトル化する
+
+1.  user-queryとのコサイン類似度が高いものを順番に４つ出力
+
+### 苦労した点
+
+1. Embeddingのengine名に指定するのはモデル名ではなくデプロイ名

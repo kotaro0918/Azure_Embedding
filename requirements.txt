@@ -1,2 +1,9 @@
 openai
 langchain
+num2words
+tiktoken
+pandas
+matplotlib
+plotly
+scipy
+scikit-learn
